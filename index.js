@@ -1,9 +1,11 @@
 const bot = require('./lib/bot.js');
-const shuffle = require('./lib/shuffle');
+const Shuffle = require('./lib/shuffle');
 const schedule = require('node-schedule');
 const users = [];
 let channelId = '';
 let lunch = true;
+
+const randomize = new Shuffle();
 
 const paramsIco = { icon_emoji: ':robot_face:' };
 
@@ -51,7 +53,7 @@ bot.on('message', msg => {
 });
 
 schedule.scheduleJob('0 0 12 * * 5', () => {
-    const groupsToLunch = shuffle(users);
+    const groupsToLunch = randomize.createGroups(users);
     let response = '';
     groupsToLunch.forEach((group, i) => {
         response += `\nGroup ${String.fromCharCode(i + 65)}:  `
