@@ -2,7 +2,6 @@ const bot = require('./lib/bot.js');
 const Shuffle = require('./lib/shuffle');
 const schedule = require('node-schedule');
 const users = [];
-let channelId = '';
 let lunch = true;
 
 const randomize = new Shuffle();
@@ -12,10 +11,6 @@ const paramsIco = { icon_emoji: ':robot_face:' };
 bot.on('start', () => {
     const initialMsg = `Hello everyone! I'm ${bot.name}!!`
     bot.postMessageToChannel('general', initialMsg, paramsIco);
-
-    bot.getChannels()
-        .then(channels => channelId = (channels.channels.filter(e => e.name === 'general'))[0].id)
-
 });
 
 schedule.scheduleJob('0 0 10 * * 5', () => {
