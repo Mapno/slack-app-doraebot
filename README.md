@@ -5,7 +5,7 @@ Slack bot done with <a href="https://www.npmjs.com/package/slackbots">slackbots<
 Bot made to go out for lunch on fridays with new coworkers every week.
 
 ## Installation
-To use this bot, first fork and ```git clone <YOUR_REPOSITORY>``` this repository.
+To use this bot, first fork this repository and ```git clone <YOUR_REPOSITORY>``` .
 
 You will need to install the npm packages used in this app.
 
