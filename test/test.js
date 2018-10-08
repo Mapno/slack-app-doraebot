@@ -1,6 +1,7 @@
 const shuffle = require('../lib/shuffle');
 const assert = require('assert');
 const _ = require('lodash');
+const bot = require('../lib/bot');
 
 describe('shuffle', () => {
     describe('typeOf', () => {
@@ -69,6 +70,11 @@ describe('shuffle', () => {
             it('should return an object', () => {
                 assert.equal('object', typeof (s1.selectLeader(arr)))
             });
-        })
+        });
+    });
+});
+describe('bot', () => {
+    it('should be an object', () => {
+        assert.equal(typeof bot, 'object');
     });
 });
