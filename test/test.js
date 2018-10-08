@@ -1,6 +1,6 @@
 const shuffle = require('../lib/shuffle');
 const assert = require('assert');
-const lodash = require('lodash');
+const _ = require('lodash');
 
 describe('shuffle', () => {
     describe('typeOf', () => {
@@ -48,9 +48,9 @@ describe('shuffle', () => {
             it('should return an array of the specified length', () => {
                 assert.equal(5, s1.distribute(arr, min , max).length)
             });
-            it('is equal to a thing', () => {
-                assert.equal(true, lodash.isEqual([1,2,3,4,5],s1.distribute(arr, min , max)))
-            })
+            it('should create a new array based on introduced parameters', () => {
+                assert.equal(true, _.isEqual([1,2,3,4,5],s1.distribute(arr, min , max)))
+            });
         });
     });
 });
