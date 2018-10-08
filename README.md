@@ -1,4 +1,4 @@
-# slack-app-gordify
+# slack-app-doraebot
 
 Slack bot done with <a href="https://www.npmjs.com/package/slackbots">slackbots</a> npm module.
 
