@@ -2,7 +2,7 @@ const bot = require('./lib/bot.js');
 const Shuffle = require('./lib/shuffle');
 const schedule = require('node-schedule');
 const users = [];
-let lunch = true;
+let lunch = false;
 
 const randomize = new Shuffle();
 
@@ -26,8 +26,6 @@ schedule.scheduleJob('0 0 10 * * 5', () => {
     bot.postMessageToChannel('general', goToLunch, paramsLunch);
     lunch = true;
 });
-
-const getUser = id => bot.getUserById(id)
 
 bot.on('message', msg => {
     const { user, text } = msg;
